@@ -6,3 +6,6 @@ github_workflow.yml
 .idea/
 .vscode/
 __pycache__/
+
+# Ignore local background follow script
+auto_follow.py
