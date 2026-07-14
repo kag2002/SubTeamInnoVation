@@ -2,8 +2,8 @@ name: Auto Follow Teams
 
 on:
   schedule:
-    - cron: '*/30 * * * *' # Chạy tự động mỗi 30 phút
-  workflow_dispatch: # Cho phép bạn bấm nút chạy thủ công bất cứ lúc nào từ giao diện GitHub
+    - cron: '*/5 * * * *' # Chạy tự động mỗi 5 phút (tần suất nhanh nhất GitHub Actions hỗ trợ chính thức)
+  workflow_dispatch: # Cho phép bấm chạy thủ công
 
 jobs:
   run-script:
