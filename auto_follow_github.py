@@ -107,8 +107,7 @@ async def check_once(client, last_total):
 
 async def main():
     print("Starting 1-minute resolution check loop (runs for 5 minutes total)...")
-    # Initialize standard HTTP/1.1 client (bypasses h2 dependency requirements)
-    async with httpx.AsyncClient() as client:
+    async with httpx.AsyncClient(http2=True) as client:
         last_total = 0
         for i in range(5):
             print(f"\n--- Checking Loop {i+1}/5 ---")
