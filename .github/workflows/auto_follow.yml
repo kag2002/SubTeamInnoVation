@@ -1,0 +1,27 @@
+name: Auto Follow Teams
+
+on:
+  schedule:
+    - cron: '*/30 * * * *' # Chạy tự động mỗi 30 phút
+  workflow_dispatch: # Cho phép bạn bấm nút chạy thủ công bất cứ lúc nào từ giao diện GitHub
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install httpx
+
+      - name: Run Auto Follow Script
+        env:
+          AI_HACKS_TOKEN: ${{ secrets.AI_HACKS_TOKEN }}
+        run: python auto_follow_github.py

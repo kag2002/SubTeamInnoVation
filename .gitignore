@@ -1,0 +1,8 @@
+# Ignore test scripts and states
+test_*.py
+probe_*.py
+last_total.txt
+github_workflow.yml
+.idea/
+.vscode/
+__pycache__/
