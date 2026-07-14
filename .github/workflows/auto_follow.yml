@@ -2,7 +2,7 @@ name: Auto Follow Teams
 
 on:
   schedule:
-    - cron: '*/5 * * * *' # Chạy tự động mỗi 5 phút (tần suất nhanh nhất GitHub Actions hỗ trợ chính thức)
+    - cron: '*/5 * * * *' # Chạy tự động mỗi 5 phút
   workflow_dispatch: # Cho phép bấm chạy thủ công
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install httpx[http2]
+          pip install "httpx[http2]"
 
       - name: Run Auto Follow Script
         env:
